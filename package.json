@@ -7,14 +7,15 @@
     "start": "babel-node ./server.js",
     "lint": "npx eslint src/* tests/unit/**/* tests/integration/**/*",
     "test": "npm run test:unit && npm run test:integration",
-    "test:integration": "NODE_ENV=test mocha --require @babel/register --opts tests/integration/mocha.opts tests/integration/**/*.spec.js",
-    "test:unit": "NODE_ENV=test mocha --require @babel/register --opts tests/unit/mocha.opts tests/unit/**/*.spec.js"
+    "test:integration": "cross-env NODE_ENV=test mocha --require @babel/register --opts tests/integration/mocha.opts tests/integration/**/*.spec.js",
+    "test:unit": "cross-env NODE_ENV=test mocha --require @babel/register --opts tests/unit/mocha.opts tests/unit/**/*.spec.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "^6.1.0",
     "mocha": "^6.2.0",
     "sinon": "^7.3.2",
